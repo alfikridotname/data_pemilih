@@ -7,7 +7,7 @@
 </div>
 <!-- /.card -->
 <div class="row">
-	<div class="col-lg-3 col-6">
+	<div class="col-3">
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-6">
+      <div class="col-3">
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
@@ -35,17 +35,4 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-info">
-          <div class="inner">
-            <h3><?php echo $jml_pemilih; ?></h3>
-
-            <p>Data Pemilih</p>
-          </div>
-          <div class="icon">
-            <i class="icon ion-ios-people-outline"></i>
-          </div>
-        </div>
-      </div>
 </div>
