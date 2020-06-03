@@ -21,10 +21,19 @@ class Dashboard extends CI_Controller
 
 	public function index(){
 		$data['title']		= "Dashboard";
+		$data['jml'] 		= $this->data_pemilih()->num_rows();
+		$data['jml_pelapor']= $this->db->get_where('pemilih', ['status' => 'PELAPOR'])->num_rows();
+		$data['jml_pemilih']= $this->db->get_where('pemilih', ['status' => 'PEMILIH'])->num_rows();
 		$page 				= 'pages/dashboard/index';
 		$data['menu'] 		= $this->load->view('layout/menu', $data, true);
 		$data['extra_css']	= $this->load->view('pages/dashboard/css',$data,true);
 		$data['extra_js']	= $this->load->view('pages/dashboard/js',$data,true);
 		$this->template->load('backend_template',$page,$data);
+	}
+
+	public function data_pemilih()
+	{
+		$pemilih = $this->db->get('pemilih');
+		return $pemilih;
 	}
 }

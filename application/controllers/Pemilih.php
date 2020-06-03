@@ -22,10 +22,17 @@ class Pemilih extends CI_Controller
 	public function index(){
 		$data['title']		= "Data Pemilih";
 		$page 				= 'pages/pemilih/index';
+		$data['pemilih'] 	= $this->data_pemilih()->result();
 		$data['menu'] 		= $this->load->view('layout/menu', $data, true);
 		$data['extra_css']	= $this->load->view('pages/pemilih/css',$data,true);
 		$data['extra_js']	= $this->load->view('pages/pemilih/js',$data,true);
 		$this->template->load('backend_template',$page,$data);
+	}
+
+	public function data_pemilih()
+	{
+		$pemilih = $this->db->get('pemilih');
+		return $pemilih;
 	}
 
 	public function simpan()

@@ -53,16 +53,24 @@
             <th>Jorong</th>
             <th>Nagari</th>
             <th>Kecamatan</th>
+            <th width="1%">Edit</th>
+            <th width="1%">Hapus</th>
           </tr>
           </thead>
           <tbody>
+          	<?php foreach ($pemilih as $key => $value) : ?>
 	          <tr>
-	            <td>Other browsers</td>
-	            <td>All others</td>
-	            <td>-</td>
-	            <td>-</td>
-	            <td>U</td>
+	            <td><?php echo $value->nik; ?></td>
+	            <td><?php echo $value->nama; ?></td>
+	            <td><?php echo $value->alamat; ?></td>
+	            <td><?php echo $value->status; ?></td>
+	            <td><?php echo $value->jorong; ?></td>
+	            <td><?php echo $value->nagari; ?></td>
+	            <td><?php echo $value->kecamatan; ?></td>
+	            <td><a href="<?php echo base_url('pemilih/edit/'); ?><?php echo $value->nik; ?>">EDIT</a></td>
+	            <td><a href="<?php echo base_url('pemilih/hapus/'); ?><?php echo $value->nik; ?>">HAPUS</a></td>
 	          </tr>
+	        <?php endforeach; ?>
           </tbody>
         </table>
 	</div>
